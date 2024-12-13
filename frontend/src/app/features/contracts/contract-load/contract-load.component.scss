@@ -1,0 +1,160 @@
+.contract-load-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    label {
+      width: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  }
+
+  .btn {
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 0;
+    transition: all 0.3s ease;
+
+    &.btn-row {
+      background-color: transparent;
+      color: #383838;
+      width: 100%;
+      border: none;
+
+      &:hover {
+        background-color: #e3e3e3;
+      }
+
+      .plus {
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding-right: 10px;
+      }
+    }
+
+    &.btn-danger {
+      background-color: #dc3545;
+      color: white;
+
+      &:hover {
+        background-color: #c82333;
+      }
+    }
+
+    &.btn-success {
+      background-color: #28a745;
+      color: white;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+
+    &.btn-secondary {
+      background-color: #a4a8ab;
+      color: #fff;
+
+      &:hover {
+        background-color: #919394;
+      }
+    }
+    
+  }
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the div takes the full width */
+  }
+}
+.room-types-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead th {
+    padding: 5px 10px; /* Apply padding only to the title row cells */
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+
+    &:last-child {
+      width: 50px; /* Make the last column small */
+    }
+  }
+
+  th,
+  td {
+    padding: 0px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Added a default border */
+    border-radius: 0px; /* Added a slight rounding */
+    height: auto; /* Let the input adjust based on content */
+
+    &:focus,
+    &:active {
+      outline: none; /* Remove default focus outline */
+      border: 1px solid #007bff; /* Highlight border on focus/active */
+      box-shadow: 0 0 3px rgba(0, 123, 255, 0.5); /* Optional: Add a subtle glow */
+    }
+  }
+
+  td:last-child {
+    text-align: center; /* Center-align the delete icon */
+  }
+
+  .delete-icon {
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}

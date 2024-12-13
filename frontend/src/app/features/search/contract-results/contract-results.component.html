@@ -1,0 +1,24 @@
+<h2>Search Results</h2>
+<div *ngIf="!results">No results to display. Please perform a search first.</div>
+<div *ngIf="results && results.length > 0">
+  <div *ngFor="let result of results" class="result-card">
+    <h3>{{ result.hotel.hotelName }}</h3>
+    <p>Total Price: {{ result.totalPrice }}</p>
+    <table>
+      <tr>
+        <th>Room Type</th>
+        <th>Price/Person (Marked Up)</th>
+        <th>Max Adults</th>
+        <th>Rooms Requested</th>
+        <th>Total Price</th>
+      </tr>
+      <tr *ngFor="let room of result.roomList">
+        <td>{{ room.typeName }}</td>
+        <td>{{ room.pricePerPersonMarkedUp }}</td>
+        <td>{{ room.maxAdults }}</td>
+        <td>{{ room.numberOfRoomsRequested }}</td>
+        <td>{{ room.totalPriceForAllSameTypeRooms }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

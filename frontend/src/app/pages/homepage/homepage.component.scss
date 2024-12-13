@@ -1,0 +1,107 @@
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Use a dedicated pseudo-element for the background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.hotel-suppliers.com/wp-content/uploads/2020/09/2018-01-14_VDV_Amsterdam_0590-e1625042326590.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(85%); /* Apply brightness only to background */
+    z-index: 1; /* Place the background below the overlay */
+  }
+
+    .overlay {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff; 
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  
+      .hero-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+  
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+
+      .btn-container {
+        display: flex;
+        gap: 20px;
+        justify-self: center;
+      }
+  
+      .cta-button {
+        border: 2px solid #fff; /* White border */
+        color: #fff; /* White text */
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Background blur effect */
+        -webkit-backdrop-filter: blur(10px); /* For Safari support */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+      }
+      
+      .cta-button:hover {
+        background-color: rgba(255, 255, 255, 0.3); /* Slightly less transparent on hover */
+        color: #e4e4e4; /* Change text color on hover */
+        border: 2px solid #e4e4e4; /* White border */
+      }
+    }
+    
+  }
+  .empty {
+    height: 100px;
+}
+  .content-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-container .overlay .hero-title {
+      font-size: 2rem;
+    }
+  
+    .hero-container .overlay .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .hero-container .overlay .cta-button {
+      font-size: 0.9rem;
+    }
+  }
+  

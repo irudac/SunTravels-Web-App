@@ -1,0 +1,43 @@
+<h2>Edit Contract</h2>
+    <form [formGroup]="contractForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>Hotel Name:</label>
+        <input formControlName="hotelName" />
+      </div>
+
+      <div>
+        <label>Valid From:</label>
+        <input type="date" formControlName="validFrom"/>
+      </div>
+
+      <div>
+        <label>Valid Until:</label>
+        <input type="date" formControlName="validUntil"/>
+      </div>
+
+      <h3>Room Types</h3>
+      <div formArrayName="roomTypes">
+        <div *ngFor="let roomGroup of roomTypes.controls; let i = index" [formGroupName]="i">
+          <h4>Room Type {{ i + 1 }}</h4>
+          <label>Type Name:</label>
+          <input formControlName="typeName"/>
+          <label>No. of Rooms Available:</label>
+          <input formControlName="noOfRoomsAvailable" type="number"/>
+          <label>Price Per Person:</label>
+          <input formControlName="pricePerPerson" type="number" step="0.01"/>
+          <label>Max Adults:</label>
+          <input formControlName="maxAdults" type="number"/>
+          <button type="button" (click)="removeRoomType(i)" *ngIf="roomTypes.length > 1">
+            Remove Room Type
+          </button>
+        </div>
+      </div>
+      <button type="button" (click)="addRoomType()">Add Another Room Type</button>
+
+      <br><br>
+      <button type="submit" [disabled]="contractForm.invalid">Save Changes</button>
+    </form>
+
+    <div *ngIf="loading">Saving...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="successMessage">{{ successMessage }}</div>
